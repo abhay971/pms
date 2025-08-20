@@ -3,7 +3,6 @@ services:
   - type: web
     name: pms-backend
     runtime: node
-    plan: free
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
     envVars:
@@ -19,7 +18,6 @@ services:
   - type: web
     name: pms-frontend
     runtime: static
-    plan: free
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: ./client/build
     routes:
@@ -31,4 +29,3 @@ databases:
   - name: pms-postgres
     databaseName: pms_dashboard
     user: pms_user
-    plan: free
